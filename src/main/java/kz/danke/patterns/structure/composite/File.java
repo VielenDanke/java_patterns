@@ -10,11 +10,11 @@ public abstract class File {
 
     public abstract void ls();
 
-    public abstract void printName();
-
     public abstract void printAllFiles();
 
-    public abstract void countFileSizeSum();
+    public abstract long countFileSizeSum();
+
+    public abstract void addFile(File file);
 
     public String getName() {
         return name;

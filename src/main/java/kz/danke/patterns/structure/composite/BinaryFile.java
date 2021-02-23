@@ -11,21 +11,25 @@ public class BinaryFile extends File {
 
     @Override
     public void ls() {
-
-    }
-
-    @Override
-    public void printName() {
-
+        System.out.printf("%s\t%d\n", getName(), this.size);
     }
 
     @Override
     public void printAllFiles() {
-
+        throw new UnsupportedOperationException("Print all files not supported by Binary file");
     }
 
     @Override
-    public void countFileSizeSum() {
+    public long countFileSizeSum() {
+        throw new UnsupportedOperationException("Count all file size sum not supported by Binary file");
+    }
 
+    @Override
+    public void addFile(File file) {
+        throw new UnsupportedOperationException("Add file is not supported in Binary file");
+    }
+
+    public long getSize() {
+        return size;
     }
 }
