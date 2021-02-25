@@ -9,8 +9,8 @@ public class Client {
         BaseObject state;
 
         state = stateMachine.transit(new FirstObject(), StateEnum.FIRST);
-        System.out.printf("ID %s, State %s\n", state.getId(), state.getState().name());
+        System.out.printf("ID %s, State %s, Class %s\n", state.getId(), state.getState().name(), state.getClass().getSimpleName());
         state = stateMachine.transit(state, StateEnum.SECOND);
-        System.out.printf("ID %s, State %s\n", state.getId(), state.getState().name());
+        System.out.printf("ID %s, State %s, Class %s\n", state.getId(), state.getState().name(), state.getClass().getSimpleName());
     }
 }

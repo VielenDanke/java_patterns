@@ -10,8 +10,10 @@ public class SecondAction implements Action<BaseObject, StateEnum> {
 
     @Override
     public BaseObject transit(BaseObject baseObject, StateEnum stateEnum) {
-        baseObject.setState(stateEnum);
-        store.store(baseObject);
-        return baseObject;
+        SecondObject secondObject = new SecondObject();
+        secondObject.setId(baseObject.getId());
+        secondObject.setState(stateEnum);
+        store.store(secondObject);
+        return secondObject;
     }
 }
