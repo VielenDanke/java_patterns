@@ -1,16 +1,22 @@
 package kz.danke.patterns.state;
 
+import java.util.UUID;
+
 public class Client {
 
     public static void main(String[] args) {
         Store<BaseObject, String> store = new StoreImpl();
-        StateMachine<BaseObject, StateEnum> stateMachine = new StateMachineImpl(store);
+        StateMachine<String, StateEnum> stateMachine = new StateMachineImpl(store);
 
-        BaseObject state;
+        BaseObject s = new InternalState();
+        s.setId(UUID.randomUUID().toString());
 
-        state = stateMachine.transit(new FirstObject(), StateEnum.FIRST);
-        System.out.printf("ID %s, State %s, Class %s\n", state.getId(), state.getState().name(), state.getClass().getSimpleName());
-        state = stateMachine.transit(state, StateEnum.SECOND);
-        System.out.printf("ID %s, State %s, Class %s\n", state.getId(), state.getState().name(), state.getClass().getSimpleName());
+        BaseObject state = store.store(s);
+
+        stateMachine.transit(state.getId(), StateEnum.FIRST);
+        stateMachine.transit(state.getId(), StateEnum.SECOND);
+
+        BaseObject baseObject = store.get(s.getId());
+        System.out.printf("ID %s, State %s, Class %s\n", baseObject.getId(), baseObject.getState().name(), baseObject.getClass().getSimpleName());
     }
 }

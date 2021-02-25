@@ -1,6 +1,6 @@
 package kz.danke.patterns.state;
 
-public class SecondAction implements Action<BaseObject, StateEnum> {
+public class SecondAction implements Action<String, StateEnum> {
 
     private final Store<BaseObject, String> store;
 
@@ -9,11 +9,12 @@ public class SecondAction implements Action<BaseObject, StateEnum> {
     }
 
     @Override
-    public BaseObject transit(BaseObject baseObject, StateEnum stateEnum) {
+    public String transit(String id, StateEnum stateEnum) {
+        BaseObject baseObject = this.store.get(id);
         SecondObject secondObject = new SecondObject();
-        secondObject.setId(baseObject.getId());
         secondObject.setState(stateEnum);
+        secondObject.setId(baseObject.getId());
         store.store(secondObject);
-        return secondObject;
+        return id;
     }
 }

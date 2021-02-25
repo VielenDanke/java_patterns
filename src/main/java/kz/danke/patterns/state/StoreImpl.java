@@ -8,8 +8,9 @@ public class StoreImpl implements Store<BaseObject, String> {
     private Map<String, BaseObject> stateMap = new HashMap<>();
 
     @Override
-    public void store(BaseObject baseObject) {
+    public BaseObject store(BaseObject baseObject) {
         this.stateMap.put(baseObject.getId(), baseObject);
+        return this.stateMap.get(baseObject.getId());
     }
 
     @Override
