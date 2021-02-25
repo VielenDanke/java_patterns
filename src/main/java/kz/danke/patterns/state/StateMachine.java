@@ -2,7 +2,7 @@ package kz.danke.patterns.state;
 
 public interface StateMachine<T, S> {
 
-    T transit(T t, StateEnum stateEnum);
+    void changeState(T t, S s);
 
     Action<T, S> stateAction(S s);
 }

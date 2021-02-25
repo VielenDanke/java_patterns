@@ -9,9 +9,9 @@ public class StateMachineImpl implements StateMachine<String, StateEnum> {
     }
 
     @Override
-    public String transit(String id, StateEnum stateEnum) {
+    public void changeState(String id, StateEnum stateEnum) {
         Action<String, StateEnum> action = stateAction(stateEnum);
-        return action.transit(id, stateEnum);
+        action.transit(id, stateEnum);
     }
 
     @Override

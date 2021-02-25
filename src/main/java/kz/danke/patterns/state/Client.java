@@ -13,8 +13,8 @@ public class Client {
 
         BaseObject state = store.store(s);
 
-        stateMachine.transit(state.getId(), StateEnum.FIRST);
-        stateMachine.transit(state.getId(), StateEnum.SECOND);
+        stateMachine.changeState(state.getId(), StateEnum.FIRST);
+        stateMachine.changeState(state.getId(), StateEnum.SECOND);
 
         BaseObject baseObject = store.get(s.getId());
         System.out.printf("ID %s, State %s, Class %s\n", baseObject.getId(), baseObject.getState().name(), baseObject.getClass().getSimpleName());
