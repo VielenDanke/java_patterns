@@ -1,0 +1,5 @@
+<html><head><title>Order Details</title></head><body>
+<h1>Order #5a75014f-a8da-456b-9d59-3ad11b435141</h1>
+<p><ul><li>Sandwich $10.0</li><li>Pizza $17.0</li><li>Soda $15.0</li></ul></p>
+<br/><hr/><h3>Total : $42.0</h3>
+</body></html>
