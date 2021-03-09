@@ -1,4 +1,4 @@
-package kz.danke.patterns.behavioral.chain.responsibility;
+package kz.danke.patterns.behavioral.chainresponsibility;
 
 public class Manager extends Employee {
 

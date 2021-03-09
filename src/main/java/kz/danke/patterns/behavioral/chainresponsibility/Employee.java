@@ -1,4 +1,4 @@
-package kz.danke.patterns.behavioral.chain.responsibility;
+package kz.danke.patterns.behavioral.chainresponsibility;
 
 //Abstract handler
 public abstract class Employee implements LeaveApprover {

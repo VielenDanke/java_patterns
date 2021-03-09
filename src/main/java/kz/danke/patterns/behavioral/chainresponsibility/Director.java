@@ -1,6 +1,4 @@
-package kz.danke.patterns.behavioral.chain.responsibility;
-
-import kz.danke.patterns.behavioral.chain.responsibility.LeaveApplication.Type;
+package kz.danke.patterns.behavioral.chainresponsibility;
 
 public class Director extends Employee {
 
@@ -10,7 +8,7 @@ public class Director extends Employee {
 	
 	@Override
 	protected boolean processRequest(LeaveApplication application) {
-		if(application.getType() == Type.PTO) {
+		if(application.getType() == LeaveApplication.Type.PTO) {
 			application.approve(getApproverRole());
 			return true;
 		}

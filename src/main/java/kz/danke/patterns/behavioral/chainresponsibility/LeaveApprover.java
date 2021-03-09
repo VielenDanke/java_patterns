@@ -1,4 +1,4 @@
-package kz.danke.patterns.behavioral.chain.responsibility;
+package kz.danke.patterns.behavioral.chainresponsibility;
 
 //This represents a handler in chain of responsibility
 public interface LeaveApprover {
